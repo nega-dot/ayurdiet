@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AyurDiet - Ayurveda + Nutrition, Digitally Simplified</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="src/styles/global.css">
+  <script type="module" src="src/main.js"></script>
+</head>
+<body class="font-['Manrope'] bg-[#F5F5F5]">
+  <!-- Header -->
+  <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#E0E5DC] transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 text-[#7FB069]">
+            <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_6_543)">
+                <path d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z" fill="currentColor"></path>
+                <path clip-rule="evenodd" d="M7.24189 26.4066C7.31369 26.4411 7.64204 26.5637 8.52504 26.3738C9.59462 26.1438 11.0343 25.5311 12.7183 24.4963C14.7583 23.2426 17.0256 21.4503 19.238 19.238C21.4503 17.0256 23.2426 14.7583 24.4963 12.7183C25.5311 11.0343 26.1438 9.59463 26.3738 8.52504C26.5637 7.64204 26.4411 7.31369 26.4066 7.24189C26.345 7.21246 26.143 7.14535 25.6664 7.1918C24.9745 7.25925 23.9954 7.5498 22.7699 8.14278C20.3369 9.32007 17.3369 11.4915 14.4142 14.4142C11.4915 17.3369 9.32007 20.3369 8.14278 22.7699C7.5498 23.9954 7.25925 24.9745 7.1918 25.6664C7.14534 26.143 7.21246 26.345 7.24189 26.4066ZM29.9001 10.7285C29.4519 12.0322 28.7617 13.4172 27.9042 14.8126C26.465 17.1544 24.4686 19.6641 22.0664 22.0664C19.6641 24.4686 17.1544 26.465 14.8126 27.9042C13.4172 28.7617 12.0322 29.4519 10.7285 29.9001L21.5754 40.747C21.6001 40.7606 21.8995 40.931 22.8729 40.7217C23.9424 40.4916 25.3821 39.879 27.0661 38.8441C29.1062 37.5904 31.3734 35.7982 33.5858 33.5858C35.7982 31.3734 37.5904 29.1062 38.8441 27.0661C39.879 25.3821 40.4916 23.9425 40.7216 22.8729C40.931 21.8995 40.7606 21.6001 40.747 21.5754L29.9001 10.7285ZM29.2403 4.41187L43.5881 18.7597C44.9757 20.1473 44.9743 22.1235 44.6322 23.7139C44.2714 25.3919 43.4158 27.2666 42.252 29.1604C40.8128 31.5022 38.8165 34.012 36.4142 36.4142C34.012 38.8165 31.5022 40.8128 29.1604 42.252C27.2666 43.4158 25.3919 44.2714 23.7139 44.6322C22.1235 44.9743 20.1473 44.9757 18.7597 43.5881L4.41187 29.2403C3.29027 28.1187 3.08209 26.5973 3.21067 25.2783C3.34099 23.9415 3.8369 22.4852 4.54214 21.0277C5.96129 18.0948 8.43335 14.7382 11.5858 11.5858C14.7382 8.43335 18.0948 5.9613 21.0277 4.54214C22.4852 3.8369 23.9415 3.34099 25.2783 3.21067C26.5973 3.08209 28.1187 3.29028 29.2403 4.41187Z" fill="currentColor" fill-rule="evenodd"></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_6_543"><rect fill="white" height="48" width="48"></rect></clipPath>
+              </defs>
+            </svg>
+          </div>
+          <span class="text-xl font-bold text-[#141711]">AyurDiet</span>
+        </div>
+        
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#features" class="text-[#4B5563] hover:text-[#7FB069] transition-colors">Features</a>
+          <a href="#services" class="text-[#4B5563] hover:text-[#7FB069] transition-colors">Services</a>
+          <a href="#pricing" class="text-[#4B5563] hover:text-[#7FB069] transition-colors">Pricing</a>
+          <a href="about.html" class="text-[#4B5563] hover:text-[#7FB069] transition-colors">About</a>
+          <a href="contact.html" class="text-[#4B5563] hover:text-[#7FB069] transition-colors">Contact</a>
+        </div>
+
+        <div class="flex items-center space-x-3">
+          <a href="login.html" class="text-[#4B5563] hover:text-[#7FB069] transition-colors">Login</a>
+          <a href="signup.html" class="bg-[#7FB069] text-white px-4 py-2 rounded-lg hover:bg-[#6A9959] transition-colors">Get Started</a>
+          <button class="md:hidden text-[#4B5563]" id="mobile-menu-btn">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <div class="absolute inset-0 leaf-pattern opacity-20"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-6xl font-bold text-[#141711] mb-6 leading-tight">
+          <span class="text-[#7FB069]">Ayurveda</span> + Nutrition,<br>
+          <span class="text-[#D97706]">Digitally Simplified</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-[#4B5563] mb-8 max-w-3xl mx-auto leading-relaxed">
+          India's first AI-powered Ayurvedic nutrition platform. Get personalized diet plans based on your Prakriti, lifestyle, and seasonal needs.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <button class="bg-[#7FB069] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#6A9959] transition-all transform hover:scale-105 shadow-lg">
+            Start Your Journey
+          </button>
+          <button class="border-2 border-[#7FB069] text-[#7FB069] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#7FB069] hover:text-white transition-all">
+            Watch Demo
+          </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+          <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg">
+            <div class="w-12 h-12 bg-[#7FB069]/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-6 h-6 text-[#7FB069]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-[#141711] mb-2">5000+ Patients</h3>
+            <p class="text-[#4B5563]">Transformed their health with personalized Ayurvedic nutrition</p>
+          </div>
+          <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg">
+            <div class="w-12 h-12 bg-[#D97706]/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-6 h-6 text-[#D97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-[#141711] mb-2">200+ Dieticians</h3>
+            <p class="text-[#4B5563]">Certified Ayurvedic nutrition experts on our platform</p>
+          </div>
+          <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg">
+            <div class="w-12 h-12 bg-[#98D8C8]/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-6 h-6 text-[#98D8C8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-[#141711] mb-2">AI-Powered</h3>
+            <p class="text-[#4B5563]">Advanced algorithms for personalized nutrition recommendations</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-[#141711] mb-4">Revolutionary Features</h2>
+        <p class="text-xl text-[#4B5563] max-w-3xl mx-auto">Experience the perfect blend of ancient Ayurvedic wisdom and modern technology</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="group p-6 bg-gradient-to-br from-[#7FB069]/10 to-[#7FB069]/5 rounded-xl hover:shadow-lg transition-all">
+          <div class="w-12 h-12 bg-[#7FB069]/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#7FB069] group-hover:text-white transition-colors">
+            <svg class="w-6 h-6 text-[#7FB069] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-[#141711] mb-2">Patient Records</h3>
+          <p class="text-[#4B5563]">Comprehensive digital health records with Ayurvedic assessment history</p>
+        </div>
+
+        <div class="group p-6 bg-gradient-to-br from-[#D97706]/10 to-[#D97706]/5 rounded-xl hover:shadow-lg transition-all">
+          <div class="w-12 h-12 bg-[#D97706]/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#D97706] group-hover:text-white transition-colors">
+            <svg class="w-6 h-6 text-[#D97706] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-[#141711] mb-2">Ayurvedic Food DB</h3>
+          <p class="text-[#4B5563]">India's first comprehensive database of foods with Dosha effects</p>
+        </div>
+
+        <div class="group p-6 bg-gradient-to-br from-[#98D8C8]/10 to-[#98D8C8]/5 rounded-xl hover:shadow-lg transition-all">
+          <div class="w-12 h-12 bg-[#98D8C8]/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#98D8C8] group-hover:text-white transition-colors">
+            <svg class="w-6 h-6 text-[#98D8C8] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-[#141711] mb-2">AI Diet Generator</h3>
+          <p class="text-[#4B5563]">Personalized meal plans based on Prakriti, season, and health goals</p>
+        </div>
+
+        <div class="group p-6 bg-gradient-to-br from-[#4B5563]/10 to-[#4B5563]/5 rounded-xl hover:shadow-lg transition-all">
+          <div class="w-12 h-12 bg-[#4B5563]/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#4B5563] group-hover:text-white transition-colors">
+            <svg class="w-6 h-6 text-[#4B5563] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-[#141711] mb-2">Analytics</h3>
+          <p class="text-[#4B5563]">Track patient progress and validate Ayurvedic treatments with data</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Unique Features Highlight -->
+  <section class="py-20 bg-gradient-to-br from-[#7FB069]/5 via-white to-[#98D8C8]/5 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-[#141711] mb-4">What Makes Us Unique</h2>
+        <p class="text-xl text-[#4B5563] max-w-3xl mx-auto">Revolutionary features that set AyurDiet apart from traditional nutrition platforms</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-8">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-[#7FB069]/20 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-[#7FB069]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-[#141711] mb-2">India's First Ayurvedic Nutrition Database</h3>
+              <p class="text-[#4B5563]">Comprehensive database of Indian foods with detailed Dosha effects, seasonal appropriateness, and nutritional values.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-[#D97706]/20 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-[#D97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0l17.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-[#141711] mb-2">AI Diet Personalization</h3>
+              <p class="text-[#4B5563]">Advanced AI considers your Prakriti, current health status, lifestyle, and seasonal changes for optimal nutrition recommendations.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-[#98D8C8]/20 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-[#98D8C8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-[#141711] mb-2">Validation Engine</h3>
+              <p class="text-[#4B5563]">Scientific tracking and validation of Ayurvedic treatments through symptom monitoring and progress analytics.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-[#4B5563]/20 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-[#4B5563]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-[#141711] mb-2">AstroTalk of Health</h3>
+              <p class="text-[#4B5563]">Real-time consultation with certified Ayurvedic experts, yoga instructors, and holistic wellness coaches.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8">
+            <div class="text-center mb-6">
+              <div class="w-16 h-16 bg-gradient-to-br from-[#7FB069] to-[#98D8C8] rounded-xl flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-[#141711] mb-2">Food Combo Checker</h3>
+              <p class="text-[#4B5563]">Validates food combinations according to Ayurvedic principles</p>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between p-3 bg-[#7FB069]/10 rounded-lg">
+                <span class="text-[#141711]">Milk + Banana</span>
+                <span class="text-red-500 font-semibold">❌ Avoid</span>
+              </div>
+              <div class="flex items-center justify-between p-3 bg-[#7FB069]/10 rounded-lg">
+                <span class="text-[#141711]">Ginger + Honey</span>
+                <span class="text-[#7FB069] font-semibold">✅ Perfect</span>
+              </div>
+              <div class="flex items-center justify-between p-3 bg-[#7FB069]/10 rounded-lg">
+                <span class="text-[#141711]">Rice + Dal</span>
+                <span class="text-[#7FB069] font-semibold">✅ Ideal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Split -->
+  <section id="services" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-[#141711] mb-4">Choose Your Path</h2>
+        <p class="text-xl text-[#4B5563] max-w-3xl mx-auto">Whether you're a healthcare professional or seeking wellness, we have the perfect solution</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="group relative bg-gradient-to-br from-[#7FB069]/5 to-[#7FB069]/10 rounded-2xl p-8 hover:shadow-xl transition-all cursor-pointer">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#7FB069]/0 to-[#7FB069]/5 rounded-2xl group-hover:from-[#7FB069]/5 group-hover:to-[#7FB069]/10 transition-all"></div>
+          <div class="relative">
+            <div class="w-16 h-16 bg-[#7FB069]/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#7FB069] group-hover:text-white transition-colors">
+              <svg class="w-8 h-8 text-[#7FB069] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-[#141711] mb-4">For Dieticians</h3>
+            <p class="text-[#4B5563] mb-6 leading-relaxed">Comprehensive practice management platform with Ayurvedic nutrition tools, patient management, and analytics.</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center text-[#4B5563]">
+                <svg class="w-5 h-5 text-[#7FB069] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Digital patient records & Prakriti assessment
+              </li>
+              <li class="flex items-center text-[#4B5563]">
+                <svg class="w-5 h-5 text-[#7FB069] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                AI-powered diet plan generation
+              </li>
+              <li class="flex items-center text-[#4B5563]">
+                <svg class="w-5 h-5 text-[#7FB069] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Progress analytics & reporting
+              </li>
+              <li class="flex items-center text-[#4B5563]">
+                <svg class="w-5 h-5 text-[#7FB069] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Appointment & billing management
+              </li>
+            </ul>
+            <button class="w-full bg-[#7FB069] text-white py-3 rounded-lg font-semibold group-hover:bg-[#6A9959] transition-colors">
+              Start Practice Portal
+            </button>
+          </div>
+        </div>
+
+        <div class="group relative bg-gradient-to-br from-[#D97706]/5 to-[#D97706]/10 rounded-2xl p-8 hover:shadow-xl transition-all cursor-pointer">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#D97706]/0 to-[#D97706]/5 rounded-2xl group-hover:from-[#D97706]/5 group-hover:to-[#D97706]/10 transition-all"></div>
+          <div class="relative">
+            <div class="w-16 h-16 bg-[#D97706]/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#D97706] group-hover:text-white transition-colors">
+              <svg class="w-8 h-8 text-[#D97706] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-[#141711] mb-4">For Patients</h3>
+            <p class="text-[#4B5563] mb-6 leading-relaxed">Personalized Ayurvedic nutrition guidance, progress tracking, and direct access to certified experts.</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center text-[#4B5563]">
+                <svg class="w-5 h-5 text-[#D97706] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Personalized diet plans based on Prakriti
+              </li>
+              <li class="flex items-center text-[#4B5563]">
+                <svg class="w-5 h-5 text-[#D97706] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Daily meal recommendations & tracking
+              </li>
+              <li class="flex items-center text-[#4B5563]">
+                <svg class="w-5 h-5 text-[#D97706] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Progress monitoring & health insights
+              </li>
+              <li class="flex items-center text-[#4B5563]">
+                <svg class="w-5 h-5 text-[#D97706] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                1:1 consultations with experts
+              </li>
+            </ul>
+            <button class="w-full bg-[#D97706] text-white py-3 rounded-lg font-semibold group-hover:bg-[#B45309] transition-colors">
+              Start Wellness Journey
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="py-20 bg-gradient-to-br from-[#F5F5F5] to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-[#141711] mb-4">Why Choose AyurDiet?</h2>
+        <p class="text-xl text-[#4B5563] max-w-3xl mx-auto">See how we stand apart from traditional nutrition platforms</p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full bg-white rounded-2xl shadow-lg overflow-hidden">
+          <thead class="bg-gradient-to-r from-[#7FB069] to-[#98D8C8] text-white">
+            <tr>
+              <th class="px-6 py-4 text-left font-semibold">Features</th>
+              <th class="px-6 py-4 text-center font-semibold">AyurDiet</th>
+              <th class="px-6 py-4 text-center font-semibold">Traditional Apps</th>
+              <th class="px-6 py-4 text-center font-semibold">Generic Nutrition</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-[#F5F5F5] transition-colors">
+              <td class="px-6 py-4 font-medium text-[#141711]">Ayurvedic Food Database</td>
+              <td class="px-6 py-4 text-center"><span class="text-[#7FB069] font-bold text-xl">✓</span></td>
+              <td class="px-6 py-4 text-center"><span class="text-red-500 font-bold text-xl">✗</span></td>
+              <td class="px-6 py-4 text-center"><span class="text-red-500 font-bold text-xl">✗</span></td>
+            </tr>
+            <tr class="hover:bg-[#F5F5F5] transition-colors">
+              <td class="px-6 py-4 font-medium text-[#141711]">Prakriti-based Personalization</td>
+              <td class="px-6 py-4 text-center"><span class="text-[#7FB069] font-bold text-xl">✓</span></td>
+              <td class="px-6 py-4 text-center"><span class="text-red-500 font-bold text-xl">✗</span></td>
+              <td class="px-6 py-4 text-center"><span class="text-red-500 font-bold text-xl">✗</span></td>
+            </tr>
+            <tr class="hover:bg-[#F5F5F5] transition-colors">
+              <td class="px-6 py-4 font-medium text-[#141711]">Seasonal Diet Adjustments</td>
+              <td class="px-6 py-4 text-center"><span class="text-[#7FB069] font-bold text-xl">✓</span></td>
+              <td class="px-6 py-4 text-center"><span class="text-orange-500 font-bold text-xl">~</span></td>
+              <td class="px-6 py-4 text-center"><span class="text-red-500 font-bold text-xl">✗</span></td>
+            </tr>
+            <tr class="hover:bg-[#F5F5F5] transition-colors">
+              <td class="px-6 py-4 font-medium text-[#141711]">Food Combination Validation</td>
+              <td class="px-6 py-4 text-center"><span class="text-[#7FB069] font-bold text-xl">✓</span></td>
+              <td class="px-6 py-4 text-center"><span class="text-red-500 font-bold text-xl">✗</span></td>
+              <td class="px-6 py-4 text-center"><span class="text-red-500 font-bold text-xl">✗</span></td>
+            </tr>
+            <tr class="hover:bg-[#F5F5F5] transition-colors">
+              <td class="px-6 py-4 font-medium text-[#141711]">Expert Consultations</td>
+              <td class="px-6 py-4 text-center"><span class="text-[#7FB069] font-bold text-xl">✓</span></td>
+              <td class="px-6 py-4 text-center"><span class="text-orange-500 font-bold text-xl">~</span></td>
+              <td class="px-6 py-4 text-center"><span class="text-orange-500 font-bold text-xl">~</span></td>
+            </tr>
+            <tr class="hover:bg-[#F5F5F5] transition-colors">
+              <td class="px-6 py-4 font-medium text-[#141711]">Holistic Wellness Approach</td>
+              <td class="px-6 py-4 text-center"><span class="text-[#7FB069] font-bold text-xl">✓</span></td>
+              <td class="px-6 py-4 text-center"><span class="text-red-500 font-bold text-xl">✗</span></td>
+              <td class="px-6 py-4 text-center"><span class="text-red-500 font-bold text-xl">✗</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Counters -->
+  <section class="py-20 bg-gradient-to-br from-[#7FB069] to-[#98D8C8] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">Our Impact in Numbers</h2>
+        <p class="text-xl opacity-90 max-w-3xl mx-auto">Transforming lives through the power of personalized Ayurvedic nutrition</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="text-5xl font-bold mb-2" data-counter="5000">0</div>
+          <div class="text-xl opacity-90">Patients Transformed</div>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl font-bold mb-2" data-counter="200">0</div>
+          <div class="text-xl opacity-90">Certified Experts</div>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl font-bold mb-2" data-counter="10000">0</div>
+          <div class="text-xl opacity-90">Foods in Database</div>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl font-bold mb-2" data-counter="98">0</div>
+          <div class="text-xl opacity-90">Success Rate %</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Overview -->
+  <section id="pricing" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-[#141711] mb-4">Simple, Transparent Pricing</h2>
+        <p class="text-xl text-[#4B5563] max-w-3xl mx-auto">Choose the plan that best fits your wellness journey or practice needs</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8 border-2 border-gray-200 hover:border-[#7FB069] transition-colors">
+          <div class="text-center">
+            <h3 class="text-2xl font-bold text-[#141711] mb-2">Basic</h3>
+            <div class="text-4xl font-bold text-[#7FB069] mb-4">₹299<span class="text-lg text-[#4B5563]">/month</span></div>
+            <p class="text-[#4B5563] mb-6">Perfect for individuals starting their Ayurvedic journey</p>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center text-[#4B5563]">
+              <svg class="w-5 h-5 text-[#7FB069] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Personalized Prakriti assessment
+            </li>
+            <li class="flex items-center text-[#4B5563]">
+              <svg class="w-5 h-5 text-[#7FB069] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Basic diet recommendations
+            </li>
+            <li class="flex items-center text-[#4B5563]">
+              <svg class="w-5 h-5 text-[#7FB069] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Food database access
+            </li>
+            <li class="flex items-center text-[#4B5563]">
+              <svg class="w-5 h-5 text-[#7FB069] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Progress tracking
+            </li>
+          </ul>
+          <button class="w-full bg-[#7FB069] text-white py-3 rounded-lg font-semibold hover:bg-[#6A9959] transition-colors">
+            Choose Basic
+          </button>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-[#7FB069] relative transform scale-105">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <span class="bg-[#7FB069] text-white px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
+          </div>
+          <div class="text-center">
+            <h3 class="text-2xl font-bold text-[#141711] mb-2">Pro</h3>
+            <div class="text-4xl font-bold text-[#7FB069] mb-4">₹799<span class="text-lg text-[#4B5563]">/month</span></div>
+            <p class="text-[#4B5563] mb-6">Complete Ayurvedic nutrition solution with expert guidance</p>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center text-[#4B5563]">
+              <svg class="w-5 h-5 text-[#7FB069] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Everything in Basic
+            </li>
+            <li class="flex items-center text-[#4B5563]">
+              <svg class="w-5 h-5 text-[#7FB069] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              AI-powered meal planning
+            </li>
+            <li class="flex items-center text-[#4B5563]">
+              <svg class="w-5 h-5 text-[#7FB069] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Monthly expert consultation
+            </li>
+            <li class="flex items-center text-[#4B5563]">
+              <svg class="w-5 h-5 text-[#7FB069] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Advanced analytics
+            </li>
+            <li class="flex items-center text-[#4B5563]">
+              <svg class="w-5 h-5 text-[#7FB069] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Seasonal adjustments
+            </li>
+          </ul>
+          <button class="w-full bg-[#7FB069] text-white py-3 rounded-lg font-semibold hover:bg-[#6A9959] transition-colors">
+            Choose Pro
+          </button>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-8 border-2 border-gray-200 hover:border-[#D97706] transition-colors">
+          <div class="text-center">
+            <h3 class="text-2xl font-bold text-[#141711] mb-2">Clinic Pack</h3>
+            <div class="text-4xl font-bold text-[#D97706] mb-4">₹2999<span class="text-lg text-[#4B5563]">/month</span></div>
+            <p class="text-[#4B5563] mb-6">Complete practice management for healthcare professionals</p>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center text-[#4B5563]">
+              <svg class="w-5 h-5 text-[#D97706] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Unlimited patient records
+            </li>
+            <li class="flex items-center text-[#4B5563]">
+              <svg class="w-5 h-5 text-[#D97706] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Full practice portal
+            </li>
+            <li class="flex items-center text-[#4B5563]">
+              <svg class="w-5 h-5 text-[#D97706] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Billing & appointments
+            </li>
+            <li class="flex items-center text-[#4B5563]">
+              <svg class="w-5 h-5 text-[#D97706] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Priority support
+            </li>
+            <li class="flex items-center text-[#4B5563]">
+              <svg class="w-5 h-5 text-[#D97706] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Custom integrations
+            </li>
+          </ul>
+          <button class="w-full bg-[#D97706] text-white py-3 rounded-lg font-semibold hover:bg-[#B45309] transition-colors">
+            Choose Clinic
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-gradient-to-br from-[#F5F5F5] to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-[#141711] mb-4">What Our Users Say</h2>
+        <p class="text-xl text-[#4B5563] max-w-3xl mx-auto">Real stories from people who transformed their health with AyurDiet</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-[#7FB069]/20 rounded-full flex items-center justify-center mr-4">
+              <span class="text-[#7FB069] font-bold">PS</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-[#141711]">Dr. Priya Sharma</h4>
+              <p class="text-[#4B5563] text-sm">Ayurvedic Practitioner</p>
+            </div>
+          </div>
+          <p class="text-[#4B5563] mb-4">"AyurDiet has revolutionized my practice. The AI-powered recommendations combined with traditional Ayurvedic principles help me provide better care to my patients."</p>
+          <div class="flex text-[#D97706]">
+            ★★★★★
+          </div>
+        </div>
+
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-[#D97706]/20 rounded-full flex items-center justify-center mr-4">
+              <span class="text-[#D97706] font-bold">RG</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-[#141711]">Rahul Gupta</h4>
+              <p class="text-[#4B5563] text-sm">Software Engineer</p>
+            </div>
+          </div>
+          <p class="text-[#4B5563] mb-4">"Lost 15kg in 6 months following my personalized Ayurvedic diet plan. The seasonal adjustments and food combinations really make a difference!"</p>
+          <div class="flex text-[#D97706]">
+            ★★★★★
+          </div>
+        </div>
+
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-[#98D8C8]/20 rounded-full flex items-center justify-center mr-4">
+              <span class="text-[#98D8C8] font-bold">AM</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-[#141711]">Anita Mehta</h4>
+              <p class="text-[#4B5563] text-sm">Yoga Instructor</p>
+            </div>
+          </div>
+          <p class="text-[#4B5563] mb-4">"The holistic approach to wellness through proper nutrition has helped me manage my digestive issues completely. Highly recommend to everyone!"</p>
+          <div class="flex text-[#D97706]">
+            ★★★★★
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-[#141711] mb-4">Frequently Asked Questions</h2>
+        <p class="text-xl text-[#4B5563]">Everything you need to know about AyurDiet</p>
+      </div>
+
+      <div class="space-y-4" id="faq-container">
+        <div class="bg-[#F5F5F5] rounded-lg overflow-hidden">
+          <button class="w-full px-6 py-4 text-left font-semibold text-[#141711] hover:bg-[#E0E5DC] transition-colors faq-toggle">
+            What makes AyurDiet different from other nutrition apps?
+            <span class="float-right">+</span>
+          </button>
+          <div class="px-6 pb-4 text-[#4B5563] hidden faq-content">
+            AyurDiet is India's first platform to combine traditional Ayurvedic principles with modern nutrition science. We consider your Prakriti (body constitution), seasonal changes, and food combinations according to Ayurveda, not just calories.
+          </div>
+        </div>
+
+        <div class="bg-[#F5F5F5] rounded-lg overflow-hidden">
+          <button class="w-full px-6 py-4 text-left font-semibold text-[#141711] hover:bg-[#E0E5DC] transition-colors faq-toggle">
+            How accurate is the Prakriti assessment?
+            <span class="float-right">+</span>
+          </button>
+          <div class="px-6 pb-4 text-[#4B5563] hidden faq-content">
+            Our Prakriti assessment is based on classical Ayurvedic texts and validated by certified Ayurvedic practitioners. It includes physical, mental, and lifestyle factors for the most accurate results.
+          </div>
+        </div>
+
+        <div class="bg-[#F5F5F5] rounded-lg overflow-hidden">
+          <button class="w-full px-6 py-4 text-left font-semibold text-[#141711] hover:bg-[#E0E5DC] transition-colors faq-toggle">
+            Can I use this if I have specific health conditions?
+            <span class="float-right">+</span>
+          </button>
+          <div class="px-6 pb-4 text-[#4B5563] hidden faq-content">
+            Yes! Our platform is designed to work with various health conditions. However, we recommend consulting with our certified Ayurvedic practitioners for personalized guidance, especially for serious conditions.
+          </div>
+        </div>
+
+        <div class="bg-[#F5F5F5] rounded-lg overflow-hidden">
+          <button class="w-full px-6 py-4 text-left font-semibold text-[#141711] hover:bg-[#E0E5DC] transition-colors faq-toggle">
+            Is the app available on mobile devices?
+            <span class="float-right">+</span>
+          </button>
+          <div class="px-6 pb-4 text-[#4B5563] hidden faq-content">
+            Yes! We have mobile apps for both iOS and Android, plus a comprehensive web platform. All your data syncs seamlessly across devices.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#141711] text-white py-16 relative overflow-hidden">
+    <div class="absolute inset-0 leaf-pattern opacity-10"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="col-span-1 md:col-span-2">
+          <div class="flex items-center space-x-3 mb-6">
+            <div class="w-8 h-8 text-[#7FB069]">
+              <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_6_543)">
+                  <path d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z" fill="currentColor"></path>
+                  <path clip-rule="evenodd" d="M7.24189 26.4066C7.31369 26.4411 7.64204 26.5637 8.52504 26.3738C9.59462 26.1438 11.0343 25.5311 12.7183 24.4963C14.7583 23.2426 17.0256 21.4503 19.238 19.238C21.4503 17.0256 23.2426 14.7583 24.4963 12.7183C25.5311 11.0343 26.1438 9.59463 26.3738 8.52504C26.5637 7.64204 26.4411 7.31369 26.4066 7.24189C26.345 7.21246 26.143 7.14535 25.6664 7.1918C24.9745 7.25925 23.9954 7.5498 22.7699 8.14278C20.3369 9.32007 17.3369 11.4915 14.4142 14.4142C11.4915 17.3369 9.32007 20.3369 8.14278 22.7699C7.5498 23.9954 7.25925 24.9745 7.1918 25.6664C7.14534 26.143 7.21246 26.345 7.24189 26.4066ZM29.9001 10.7285C29.4519 12.0322 28.7617 13.4172 27.9042 14.8126C26.465 17.1544 24.4686 19.6641 22.0664 22.0664C19.6641 24.4686 17.1544 26.465 14.8126 27.9042C13.4172 28.7617 12.0322 29.4519 10.7285 29.9001L21.5754 40.747C21.6001 40.7606 21.8995 40.931 22.8729 40.7217C23.9424 40.4916 25.3821 39.879 27.0661 38.8441C29.1062 37.5904 31.3734 35.7982 33.5858 33.5858C35.7982 31.3734 37.5904 29.1062 38.8441 27.0661C39.879 25.3821 40.4916 23.9425 40.7216 22.8729C40.931 21.8995 40.7606 21.6001 40.747 21.5754L29.9001 10.7285ZM29.2403 4.41187L43.5881 18.7597C44.9757 20.1473 44.9743 22.1235 44.6322 23.7139C44.2714 25.3919 43.4158 27.2666 42.252 29.1604C40.8128 31.5022 38.8165 34.012 36.4142 36.4142C34.012 38.8165 31.5022 40.8128 29.1604 42.252C27.2666 43.4158 25.3919 44.2714 23.7139 44.6322C22.1235 44.9743 20.1473 44.9757 18.7597 43.5881L4.41187 29.2403C3.29027 28.1187 3.08209 26.5973 3.21067 25.2783C3.34099 23.9415 3.8369 22.4852 4.54214 21.0277C5.96129 18.0948 8.43335 14.7382 11.5858 11.5858C14.7382 8.43335 18.0948 5.9613 21.0277 4.54214C22.4852 3.8369 23.9415 3.34099 25.2783 3.21067C26.5973 3.08209 28.1187 3.29028 29.2403 4.41187Z" fill="currentColor" fill-rule="evenodd"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_6_543"><rect fill="white" height="48" width="48"></rect></clipPath>
+                </defs>
+              </svg>
+            </div>
+            <span class="text-2xl font-bold">AyurDiet</span>
+          </div>
+          <p class="text-gray-300 mb-6 max-w-md">Bridging ancient Ayurvedic wisdom with modern nutrition science to transform lives through personalized wellness.</p>
+          <div class="flex space-x-4 mb-8">
+            <a href="#" class="w-10 h-10 bg-[#7FB069]/20 rounded-lg flex items-center justify-center hover:bg-[#7FB069] transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+              </svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-[#7FB069]/20 rounded-lg flex items-center justify-center hover:bg-[#7FB069] transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+              </svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-[#7FB069]/20 rounded-lg flex items-center justify-center hover:bg-[#7FB069] transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.719-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.749.097.118.112.222.083.343-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+          <ul class="space-y-3">
+            <li><a href="about.html" class="text-gray-300 hover:text-[#7FB069] transition-colors">About Us</a></li>
+            <li><a href="#features" class="text-gray-300 hover:text-[#7FB069] transition-colors">Features</a></li>
+            <li><a href="#pricing" class="text-gray-300 hover:text-[#7FB069] transition-colors">Pricing</a></li>
+            <li><a href="contact.html" class="text-gray-300 hover:text-[#7FB069] transition-colors">Contact</a></li>
+            <li><a href="blog.html" class="text-gray-300 hover:text-[#7FB069] transition-colors">Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Download App</h3>
+          <div class="space-y-3">
+            <a href="#" class="inline-block">
+              <img src="https://images.pexels.com/photos/3584994/pexels-photo-3584994.jpeg?auto=compress&cs=tinysrgb&w=200&h=60&fit=crop" alt="Download on App Store" class="h-12 rounded-lg">
+            </a>
+            <a href="#" class="inline-block">
+              <img src="https://images.pexels.com/photos/3584994/pexels-photo-3584994.jpeg?auto=compress&cs=tinysrgb&w=200&h=60&fit=crop" alt="Get it on Google Play" class="h-12 rounded-lg">
+            </a>
+          </div>
+          <div class="mt-6">
+            <h4 class="text-sm font-semibold mb-2">Support</h4>
+            <p class="text-gray-300 text-sm">help@ayurdiet.com</p>
+            <p class="text-gray-300 text-sm">+91 99999 88888</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-300 text-sm mb-4 md:mb-0">&copy; 2024 AyurDiet. All rights reserved.</p>
+        <div class="flex space-x-6 text-sm">
+          <a href="#" class="text-gray-300 hover:text-[#7FB069] transition-colors">Privacy Policy</a>
+          <a href="#" class="text-gray-300 hover:text-[#7FB069] transition-colors">Terms of Service</a>
+          <a href="#" class="text-gray-300 hover:text-[#7FB069] transition-colors">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
