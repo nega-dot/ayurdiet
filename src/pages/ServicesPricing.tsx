@@ -201,7 +201,7 @@ export const ServicesPricing: React.FC = () => {
             </Card>
 
             {/* Pro Plan */}
-            <Card className="p-8 text-center border-2 border-[#7FB069] relative">
+            <Card className="p-8 text-center border-2 border-[#7FB069] relative transform scale-105">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                 <span className="bg-[#7FB069] text-white px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
               </div>
@@ -282,7 +282,7 @@ export const ServicesPricing: React.FC = () => {
           <div className="text-center mt-12">
             <p className="text-[#4B5563] mb-4">Need a custom solution for your organization?</p>
             <Link to="/contact">
-              <Button variant="outline">Contact Sales</Button>
+              <Button variant="outline" className="px-8 py-3">Contact Sales</Button>
             </Link>
           </div>
         </div>

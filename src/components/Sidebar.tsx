@@ -16,7 +16,7 @@ export const Sidebar: React.FC = () => {
   ];
 
   return (
-    <div className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
+    <div className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0 z-40">
       <div className="flex-1 flex flex-col min-h-0 bg-white border-r border-[#E0E5DC]">
         <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
           <div className="flex items-center flex-shrink-0 px-4 mb-8">
@@ -31,7 +31,9 @@ export const Sidebar: React.FC = () => {
                 </defs>
               </svg>
             </div>
-            <span className="text-xl font-bold text-[#141711]">AyurDiet</span>
+            <Link to="/" className="text-xl font-bold text-[#141711] hover:text-[#7FB069] transition-colors">
+              AyurDiet
+            </Link>
           </div>
           <nav className="mt-5 flex-1 px-2 space-y-1">
             {menuItems.map((item) => (
@@ -52,13 +54,18 @@ export const Sidebar: React.FC = () => {
         </div>
         <div className="flex-shrink-0 flex border-t border-[#E0E5DC] p-4">
           <div className="flex items-center">
-            <div className="w-8 h-8 bg-[#7FB069] rounded-full flex items-center justify-center">
+            <div className="w-8 h-8 bg-[#7FB069] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#6A9959] transition-colors">
               <span className="text-white font-semibold text-sm">DR</span>
             </div>
             <div className="ml-3">
               <p className="text-sm font-medium text-[#141711]">Dr. Smith</p>
               <p className="text-xs text-[#4B5563]">Ayurvedic Practitioner</p>
             </div>
+            <button className="ml-auto p-1 text-[#4B5563] hover:text-[#7FB069] transition-colors">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+              </svg>
+            </button>
           </div>
         </div>
       </div>

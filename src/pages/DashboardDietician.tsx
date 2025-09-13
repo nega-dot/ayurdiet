@@ -3,11 +3,11 @@ import { Sidebar } from '../components/Sidebar';
 
 export const DashboardDietician: React.FC = () => {
   return (
-    <div className="flex h-screen bg-[#F5F5F5]">
+    <div className="flex min-h-screen bg-[#F5F5F5]">
       <Sidebar />
       
       {/* Main Content */}
-      <div className="flex-1 md:ml-64 overflow-auto">
+      <div className="flex-1 md:ml-64 overflow-auto pt-16 md:pt-0">
         {/* Header */}
         <div className="bg-white border-b border-[#E0E5DC] p-6">
           <div className="flex items-center justify-between">
@@ -17,9 +17,12 @@ export const DashboardDietician: React.FC = () => {
             </div>
             <div className="flex items-center space-x-4">
               <button className="p-2 text-[#4B5563] hover:text-[#7FB069] transition-colors">
-                <span className="text-xl">🔔</span>
+                <span className="text-xl relative">
+                  🔔
+                  <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full text-xs text-white flex items-center justify-center">3</span>
+                </span>
               </button>
-              <div className="w-10 h-10 bg-[#7FB069] rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-[#7FB069] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#6A9959] transition-colors">
                 <span className="text-white font-semibold">DS</span>
               </div>
             </div>

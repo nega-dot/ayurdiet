@@ -3,18 +3,18 @@ import { Navbar } from '../components/Navbar';
 
 export const DashboardPatient: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#F5F5F5] pb-20 md:pb-0">
+    <div className="min-h-screen bg-[#F5F5F5] pb-20 md:pb-4">
       <Navbar userType="patient" />
       
       {/* Header */}
-      <div className="bg-gradient-to-br from-[#7FB069] to-[#98D8C8] text-white p-6">
+      <div className="bg-gradient-to-br from-[#7FB069] to-[#98D8C8] text-white p-6 mt-16 md:mt-0">
         <div className="max-w-md mx-auto">
           <div className="flex items-center justify-between mb-4">
             <div>
               <h1 className="text-2xl font-bold">Good Morning, Priya!</h1>
               <p className="text-white/80">Your wellness journey continues</p>
             </div>
-            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center cursor-pointer hover:bg-white/30 transition-colors">
               <span className="text-xl">🌱</span>
             </div>
           </div>

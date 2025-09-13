@@ -32,6 +32,8 @@ export const Header: React.FC = () => {
     { name: 'Contact', path: '/contact' }
   ];
 
+  const [showUserMenu, setShowUserMenu] = useState(false);
+
   return (
     <header className="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#E0E5DC]">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,9 +59,68 @@ export const Header: React.FC = () => {
 
           {/* Desktop Auth Buttons */}
           <div className="hidden md:flex items-center space-x-3">
-            <Link to="/login/patient">
-              <Button variant="ghost">Login</Button>
-            </Link>
+            <div className="relative">
+              <Button 
+                variant="ghost" 
+                onClick={() => setShowUserMenu(!showUserMenu)}
+                className="flex items-center space-x-1"
+              >
+                <span>Login</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </Button>
+              
+              {showUserMenu && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-[#E0E5DC] py-2 z-50">
+                  <Link 
+                    to="/login/patient" 
+                    className="block px-4 py-2 text-[#4B5563] hover:bg-[#7FB069]/10 hover:text-[#7FB069] transition-colors"
+                    onClick={() => setShowUserMenu(false)}
+                  >
+                    Patient Login
+                  </Link>
+                  <Link 
+                    to="/login/dietician" 
+                    className="block px-4 py-2 text-[#4B5563] hover:bg-[#7FB069]/10 hover:text-[#7FB069] transition-colors"
+                    onClick={() => setShowUserMenu(false)}
+                  >
+                    Dietician Login
+                  </Link>
+                  <div className="border-t border-[#E0E5DC] my-2"></div>
+                  <Link 
+                    to="/signup/patient" 
+                    className="block px-4 py-2 text-[#4B5563] hover:bg-[#7FB069]/10 hover:text-[#7FB069] transition-colors"
+                    onClick={() => setShowUserMenu(false)}
+                  >
+                    Patient Signup
+                  </Link>
+                  <Link 
+                    to="/signup/dietician" 
+                    className="block px-4 py-2 text-[#4B5563] hover:bg-[#7FB069]/10 hover:text-[#7FB069] transition-colors"
+                    onClick={() => setShowUserMenu(false)}
+                  >
+                    Dietician Signup
+                  </Link>
+                  <div className="border-t border-[#E0E5DC] my-2"></div>
+                  <Link 
+                    to="/dashboard/patient" 
+                    className="block px-4 py-2 text-[#4B5563] hover:bg-[#7FB069]/10 hover:text-[#7FB069] transition-colors"
+                    onClick={() => setShowUserMenu(false)}
+                  >
+                    Patient Dashboard
+                  </Link>
+                  <Link 
+                    to="/dashboard/dietician" 
+                    className="block px-4 py-2 text-[#4B5563] hover:bg-[#7FB069]/10 hover:text-[#7FB069] transition-colors"
+                    onClick={() => setShowUserMenu(false)}
+                  >
+                    Dietician Dashboard
+                  </Link>
+                </div>
+              )}
+            </div>
+            
             <Link to="/signup/patient">
               <Button>Get Started</Button>
             </Link>
@@ -91,17 +152,38 @@ export const Header: React.FC = () => {
                 </Link>
               ))}
               <div className="pt-4 border-t space-y-2">
-                <Link to="/login/patient" className="block">
-                  <Button variant="ghost" className="w-full">Login</Button>
+                <Link to="/login/patient" className="block" onClick={() => setIsMenuOpen(false)}>
+                  <Button variant="ghost" className="w-full">Patient Login</Button>
                 </Link>
-                <Link to="/signup/patient" className="block">
-                  <Button className="w-full">Get Started</Button>
+                <Link to="/login/dietician" className="block" onClick={() => setIsMenuOpen(false)}>
+                  <Button variant="ghost" className="w-full">Dietician Login</Button>
+                </Link>
+                <Link to="/signup/patient" className="block" onClick={() => setIsMenuOpen(false)}>
+                  <Button className="w-full">Patient Signup</Button>
+                </Link>
+                <Link to="/signup/dietician" className="block" onClick={() => setIsMenuOpen(false)}>
+                  <Button variant="outline" className="w-full">Dietician Signup</Button>
+                </Link>
+                <div className="border-t border-[#E0E5DC] my-2"></div>
+                <Link to="/dashboard/patient" className="block" onClick={() => setIsMenuOpen(false)}>
+                  <Button variant="ghost" className="w-full">Patient Dashboard</Button>
+                </Link>
+                <Link to="/dashboard/dietician" className="block" onClick={() => setIsMenuOpen(false)}>
+                  <Button variant="ghost" className="w-full">Dietician Dashboard</Button>
                 </Link>
               </div>
             </div>
           </div>
         )}
       </nav>
+      
+      {/* Overlay for mobile menu */}
+      {showUserMenu && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-25 z-40"
+          onClick={() => setShowUserMenu(false)}
+        ></div>
+      )}
     </header>
   );
 };

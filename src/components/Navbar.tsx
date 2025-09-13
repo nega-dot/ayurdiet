@@ -27,7 +27,27 @@ export const Navbar: React.FC<NavbarProps> = ({ userType }) => {
 
   if (userType === 'patient') {
     return (
-      <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-[#E0E5DC] z-50 md:hidden">
+      <>
+        {/* Desktop Header for Patient */}
+        <header className="hidden md:block bg-white/90 backdrop-blur-md border-b border-[#E0E5DC] sticky top-0 z-50">
+          <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16">
+              <Logo />
+              
+              <div className="flex items-center space-x-4">
+                <button className="p-2 text-[#4B5563] hover:text-[#7FB069] transition-colors">
+                  <span className="text-xl">🔔</span>
+                </button>
+                <div className="w-8 h-8 bg-[#7FB069] rounded-full flex items-center justify-center">
+                  <span className="text-white font-semibold text-sm">P</span>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </header>
+        
+        {/* Mobile Bottom Navigation */}
+        <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-[#E0E5DC] z-50 md:hidden">
         <div className="flex justify-around items-center py-2">
           {[
             { icon: '🏠', label: 'Home', path: '/dashboard/patient' },
@@ -51,6 +71,7 @@ export const Navbar: React.FC<NavbarProps> = ({ userType }) => {
           ))}
         </div>
       </nav>
+      </>
     );
   }
 

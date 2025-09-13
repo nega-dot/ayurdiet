@@ -19,12 +19,12 @@ export const Home: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/signup/patient">
-              <Button size="lg" className="px-8 py-4">
+              <Button size="lg" className="px-8 py-4 w-full sm:w-auto">
                 Start Your Journey
               </Button>
             </Link>
             <Link to="/features">
-              <Button variant="outline" size="lg" className="px-8 py-4">
+              <Button variant="outline" size="lg" className="px-8 py-4 w-full sm:w-auto">
                 Learn More
               </Button>
             </Link>
@@ -111,12 +111,12 @@ export const Home: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/signup/patient">
-              <Button size="lg" className="px-8 py-4">
+              <Button size="lg" className="px-8 py-4 w-full sm:w-auto">
                 Get Started Free
               </Button>
             </Link>
             <Link to="/contact">
-              <Button variant="outline" size="lg" className="px-8 py-4">
+              <Button variant="outline" size="lg" className="px-8 py-4 w-full sm:w-auto">
                 Contact Us
               </Button>
             </Link>
